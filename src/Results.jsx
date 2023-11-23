@@ -1,4 +1,5 @@
 import Pet from "./Pet";
+import { Link } from "react-router-dom";
 
 const Results = ({pets})=> {
     return(
@@ -8,6 +9,7 @@ const Results = ({pets})=> {
             ) : (
                 pets.map((pet) =>{
                     return(
+                        <Link key={pet.id} to={`/details/${pet.id}`}>                        
                         <Pet 
                         animal = {pet.animal}
                         key={pet.id}
@@ -17,6 +19,7 @@ const Results = ({pets})=> {
                         location={`${pet.city}, ${pet.state}`}
                         id={pet.id}
                         />
+                         </Link>
                     );
                 })
             )};
