@@ -63,6 +63,7 @@ const SearchParams = () =>{
                 </label>
                 <button>Submit</button>
             </form>
+            <Carousel images={pets.images}/>
             <Results pets={pets}/>
         </div>
     );

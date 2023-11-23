@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Details from "./Details";
 
 
+
 const queryClient  = new QueryClient({
   defaultOptions:{
     queries:{
@@ -26,6 +27,7 @@ const App = () => {
               <Route path="/details/:id" element={<Details />} />
               <Route path="/" element={<SearchParams />} />
             </Routes>
+            
       </QueryClientProvider >
    </BrowserRouter>
   );
