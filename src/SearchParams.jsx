@@ -20,8 +20,9 @@ const SearchParams = () => {
   const pets = results?.data?.pets ?? [];
 
   return (
-    <div className="search-params">
+    <div className="my-0 mx-auto w-11/12  ">
       <form
+      className="p-10 m-10 flex flex-col items-center justify-center bg-gray-200 rounded-lg"
         onSubmit={(e) => {
           e.preventDefault();
           const formData = new FormData(e.target);
@@ -40,12 +41,13 @@ const SearchParams = () => {
         ) : null}
         <label htmlFor="location">
           Location
-          <input id="location" name="location" placeholder="Location" />
+          <input id="location" type = "text" name="location" placeholder="Location" className="mb-5 block w-60"/>
         </label>
 
         <label htmlFor="animal">
           Animal
           <select
+          className="mb-5 block w-60"
             id="animal"
             name="animal"
             onChange={(e) => {
@@ -66,7 +68,7 @@ const SearchParams = () => {
 
         <label htmlFor="breed">
           Breed
-          <select disabled={!breeds.length} id="breed" name="breed">
+          <select disabled={!breeds.length} id="breed" name="breed" className="mb-5 block w-60 disabled:opacity-50"  >
             <option />
             {breeds.map((breed) => (
               <option key={breed} value={breed}>
@@ -76,7 +78,7 @@ const SearchParams = () => {
           </select>
         </label>
 
-        <button>Submit</button>
+        <button className="rounded bg-orange-500 py-2 px-6 border-none text-white hover:opacity-50">Submit</button>
       </form>
       <Results pets={pets} />
     </div>
